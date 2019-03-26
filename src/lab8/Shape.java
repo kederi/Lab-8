@@ -1,5 +1,11 @@
 package lab8;
 
-public enum Shape {
-
+public enum Shape 
+{
+	THIMBLE, BOOT, RACECAR;
+	
+	public String toString()
+	{
+		
+	}
 }
