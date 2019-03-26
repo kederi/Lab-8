@@ -3,48 +3,35 @@
  * @author Kobi Ederi
  */
 package lab8;
-public class Driver {
-	
-	/*public void testColor()
-	{
-		Color [] colors = Color.values();
-		for (Color test : colors)
-		{
-			switch (test)
-			{
-			case RED:
-				Assert.assertEquals(test.getR(), 255);
-				Assert.assertEquals(test.getG(), 0);
-				Assert.assertEquals(test.getB(), 0);
-			case GREEN:
-				Assert.assertEquals(test.getR(), 0);
-				Assert.assertEquals(test.getG(), 255);
-				Assert.assertEquals(test.getB(), 0);
-				
-			case BLUE:
-				Assert.assertEquals(test.getR(), 0);
-				Assert.assertEquals(test.getG(), 0);
-				Assert.assertEquals(test.getB(), 255);
-			case YELLOW:
-				Assert.assertEquals(test.getR(), 255);
-				Assert.assertEquals(test.getG(), 255);
-				Assert.assertEquals(test.getB(), 0);
-			case CYAN: 
-				Assert.assertEquals(test.getR(), 0);
-				Assert.assertEquals(test.getG(), 255);
-				Assert.assertEquals(test.getB(), 255);
-			case MAGENTA:
-				Assert.assertEquals(test.getR(), 255);
-				Assert.assertEquals(test.getG(), 0);
-				Assert.assertEquals(test.getB(), 255);
-				
-			}
-		}
-	}
-*/
 
-	public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.Set;
+
+public class Driver {
+
+	public static void main(String[] args) 
+	{
 		// TODO Auto-generated method stub
+		BoardGame monopoly = new BoardGame();
+		
+		monopoly.addPlayer("Ron",GamePiece.YELLOW_BOOT,Location.BILLIARD_ROOM);
+		monopoly.addPlayer("Jeremy", GamePiece.RED_RACER, Location.KITCHEN);
+		
+		GamePiece first = monopoly.getPlayerGamePiece("Ron");
+		String ronRes = monopoly.getPlayerWithGamePiece(GamePiece.YELLOW_BOOT);
+		
+		monopoly.movePlayer("Ron", Location.KITCHEN);
+		String [] yeah = {"Ron", "Jeremy"};
+		Location [] locs = {Location.HALL, Location.BILLIARD_ROOM};
+		String [] dudes = monopoly.moveTwoPlayers(yeah, locs);
+		
+		Location ye = monopoly.getPlayersLocation("Ron");
+		ArrayList<String> tes = monopoly.getPlayersAtLocation(Location.KITCHEN);
+		ArrayList<GamePiece> tes2 = monopoly.getGamePiecesAtLocation(Location.KITCHEN);
+		Set<String> play = monopoly.getPlayers();
+		Set<Location> plays = monopoly.getPlayerLocations();
+		Set<GamePiece> playss = monopoly.getPlayerPieces();
+		
 		
 		
 
