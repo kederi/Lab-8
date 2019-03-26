@@ -6,6 +6,6 @@ public enum Shape
 	
 	public String toString()
 	{
-		
+		return this.toString();
 	}
 }

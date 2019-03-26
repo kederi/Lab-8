@@ -1,8 +1,14 @@
-package lab8;
+package lab8; 
 
 public enum GamePiece 
 {
-	RED_RACER, BLUE_RACER, MAGENTA_RACER, RED_THIMBLE, BLUE_BOOT, GREEN_BOOT, YELLOW_BOOT;
+	RED_RACER(new GamePieceAppearance(Color.RED, Shape.RACECAR), 0),
+	BLUE_RACER(new GamePieceAppearance(Color.BLUE, Shape.RACECAR), 2),
+	MAGENTA_RACER(new GamePieceAppearance(Color.MAGENTA, Shape.RACECAR), 1),
+	RED_THIMBLE(new GamePieceAppearance(Color.RED, Shape.THIMBLE), 10),
+	BLUE_BOOT(new GamePieceAppearance(Color.BLUE, Shape.BOOT), 5), 
+	GREEN_BOOT(new GamePieceAppearance(Color.GREEN, Shape.BOOT), 8), 
+	YELLOW_BOOT(new GamePieceAppearance(Color.YELLOW, Shape.BOOT), 7);
 	
 	private GamePieceAppearance appearance; 
 	private int priority;
@@ -14,19 +20,19 @@ public enum GamePiece
 	}
 	public Color getColor()
 	{
-		appearance.getColor();
+		return appearance.getColor();
 	}
 	public Shape getShape()
 	{
-		appearance.getShape();
+		return appearance.getShape();
 	}
-	public GamePiece movesFirst(GamePiece a, GamePiece b)
+	public static GamePiece movesFirst(GamePiece a, GamePiece b)
 	{
 			if (a.priority < b.priority)
 			{
 				return a;
 			}
-			else if(a.priority > b.priority)
+			else//(a.priority > b.priority)
 			{
 				return b;
 			}
@@ -36,7 +42,7 @@ public enum GamePiece
 	}
 	public String toString()
 	{
-		
+		return String.format("%s: a %s %s with priority %d", )
 	}
 	
 }
