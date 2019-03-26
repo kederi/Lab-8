@@ -1,5 +1,3 @@
-package lab8; 
-
 public enum GamePiece 
 {
 	RED_RACER(new GamePieceAppearance(Color.RED, Shape.RACECAR), 0),

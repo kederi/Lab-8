@@ -1,4 +1,4 @@
-package lab8;
+
 import java.util.*;
 
 public class BoardGame 
@@ -16,7 +16,9 @@ public class BoardGame
 	public boolean addPlayer(String playerName, GamePiece gamePiece, Location initialLocation)
 	{
 		if (playerPieces.containsValue(gamePiece))
+		{
 			return false;
+		}
 		playerPieces.put(playerName, gamePiece);
 		playerLocations.put(playerName, initialLocation);
 		return true;
@@ -40,9 +42,13 @@ public class BoardGame
 			}
 		}
 		if (res.equals(""))
+		{
 			return null;
+		}
 		else 
+		{
 			return res;
+		}
 	}
 	
 	//TODO
