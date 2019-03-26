@@ -59,8 +59,8 @@ public class BoardGame
 		if(move.equals(playerPieces.get(playerNames[0])))
 		{
 			order[1] = getPlayerWithGamePiece(playerPieces.get(playerNames[1]));
-			movePlayer(order[1], newLocations[1]);
 			movePlayer(order[0], newLocations[0]);
+			movePlayer(order[1], newLocations[1]);
 		}
 		else if (move.equals(playerPieces.get(playerNames[1])))
 		{

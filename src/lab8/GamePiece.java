@@ -42,7 +42,7 @@ public enum GamePiece
 	}
 	public String toString()
 	{
-		return String.format("%s: a %s %s with priority %d", )
+		return String.format("%s: a %s %s with priority %d",this.name(), this.getColor(),this.getShape(),this.priority);
 	}
 	
 }
