@@ -74,31 +74,59 @@ public class BoardGame
 	//TODO
 	public Location getPlayersLocation(String player)
 	{
-		
+		return playerLocations.get(player);
 	}
 	//TODO
-	public ArrayList<GamePiece> getPlayersAtLocation(Location loc)
+	public ArrayList<String> getPlayersAtLocation(Location loc)
 	{
-		
+		ArrayList<String> players = new ArrayList<String>();
+		for(Map.Entry<String, Location> setLoc : playerLocations.entrySet())
+		{
+			if(setLoc.getValue().equals(loc))
+			{
+				String name = setLoc.getKey();
+				players.add(name);
+			}
+		}
+		return players;
 	}
 	//TODO
 	public ArrayList<GamePiece> getGamePiecesAtLocation(Location loc)
 	{
-		
+		ArrayList<GamePiece> players = new ArrayList<GamePiece>();
+		for(Map.Entry<String, Location> setLoc : playerLocations.entrySet())
+		{
+			if(setLoc.getValue().equals(loc))
+			{
+				String name = setLoc.getKey();
+				players.add(playerPieces.get(name));
+			}
+		}
+		return players;
 	}
 	//TODO
 	public Set<String> getPlayers()
 	{
-		
+		return playerPieces.keySet();
 	}
 	//TODO
 	public Set<Location> getPlayerLocations()
 	{
-		
+		Set<Location> locs = new HashSet<Location>();
+		for(Map.Entry<String, Location> setLoc : playerLocations.entrySet())
+		{
+			locs.add(setLoc.getValue());
+		}
+		return locs;
 	}
 	//TODO
 	public Set<GamePiece> getPlayerPieces()
 	{
-		
+		Set<GamePiece> locs = new HashSet<GamePiece>();
+		for(Map.Entry<String, GamePiece> setPiece : playerPieces.entrySet())
+		{
+			locs.add(setPiece.getValue());
+		}
+		return locs;
 	}
 }
